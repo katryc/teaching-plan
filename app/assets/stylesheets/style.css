@@ -6,7 +6,7 @@
  * Made By MaterializeCSS.com
  */
 header, main, footer {
-    padding-left: 240px;
+    padding-left: 180px;
   }
 
   @media only screen and (max-width : 992px) {
@@ -19,15 +19,18 @@ nav .brand-logo {
   color: #c6ff00;
 
 }
-
+.icon-block .infoicon {
+  font-size: 100px;
+  color:#c6ff00;
+}
 .brand-logo img{
 
     width: 150px;
 }
 
 .hbrand img{
-  width: 580px;
-  height: 100px;
+  max-width: 580px;
+  max-height: 100px;
 }
 
 p {
@@ -57,7 +60,9 @@ p {
     top: 10%;
   }
 }
-
+.mdi-navigation-menu {
+  color: black;
+}
 @media only screen and (max-width : 600px) {
   #index-banner .section {
     top: 0;
@@ -74,7 +79,7 @@ p {
 .icon-block {
   padding: 0 15px;
 }
-.icon-block .material-icons {
+.material-icons {
   font-size: 50px;
   color: #c6ff00;
 }

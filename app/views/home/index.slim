@@ -9,26 +9,44 @@ html lang="en"
     /! CSS
     link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /
   body
-    ul#slide-out.side-nav.fixed
-       li
-        a href="#!"  First Sidebar Link
-       li
-        a href="#!"  Second Sidebar Link
-    a.button-collapse data-activates="slide-out" href="#"
-     i.mdi-navigation-menu
+
+    header
+      nav.top-nav.lime.accent-3
+       .container#home.section.scrollspy
+        .nav-wrapper
+            a#logo-container.brand-logo.hbrand.center href="#"
+              img alt=("my logo") src="assets/brand.png" /
+       .container
+         a#nav-mobile.button-collapse.top-nav.full-hide-on-large-only
+
+       ul#slide-out.side-nav.fixed
+          li.logo style="width: 250px; height: 200px;"
+           a href="#home"
+             img alt=('logo on the sidebar') src="assets/brand.png" style="width: 200px; height: 30px;"/
+          li.card
+           a href="#about"  ABOUT
+          li.card
+           a href="#!"  REGISTER
+          li.card
+           a.white-text href="https://twitter.com/katmryc"
+              img alt=("my logo") src="assets/tw.png" /
+          li.card
+           a.white-text href="https://www.facebook.com/profile.php?id=100010805376820"
+              img alt=("my logo") src="assets/fb.png" /
+          li.card
+            a.white-text href="https://www.linkedin.com/in/katmrycak"
+               img alt=("my logo") src="assets/linl.png" /
+       a.button-collapse data-activates="slide-out" href="#"
+        i.mdi-navigation-menu
 
 
 
 
 
 
-    .container
-      .row
-       .col.m6.m2
-          a#logo-container.brand-logo.hbrand href="#"
-            img alt=("my logo") src="assets/brand.png" /
 
-    #index-banner.parallax-container
+    main
+     #index-banner.parallax-container
       .section.no-pad-bot
         .container
           br/
@@ -41,29 +59,29 @@ html lang="en"
           br/
       .parallax
         img alt=("background img 1") src="assets/background4.jpg" /
-    .container
+     .container
       .section
         /! Icon Section
         .row
           .col.s12.m4
             .icon-block
               h2.center.brown-text
-                i.material-icons loyalty
-              h5.center Love what I do
-              p.light Happy to start new projects, explore new technology, put long hours of hard-coding.
+                i.material-icons.infoicon loyalty
+              h5.center EASY TO USE
+              p.light just click and build the teaching plans for your amazing classes
           .col.s12.m4
             .icon-block
               h2.center.brown-text
-                i.material-icons group
-              h5.center Team-player
-              p.light Being an efficient part of the team can make everybody's life easier. Why settle for less?
+                i.material-icons.infoicon group
+              h5.center FOR ALL TEACHERS
+              p.light you can be an ace in any discilpline: there is no limit to the plan builder
           .col.s12.m4
             .icon-block
               h2.center.brown-text
-                i.material-icons satellite
-              h5.center Remote
-              p.light Remote job is always fun: only way to get to understand the world is to travel it.
-    .parallax-container.valign-wrapper
+                i.material-icons.infoicon satellite
+              h5.center ACCESSABLE
+              p.light no matter if you work in China or NewYork: TP will be always there to help you out
+     .parallax-container.valign-wrapper
       .section.no-pad-bot
         .container
           .row.center
@@ -73,15 +91,17 @@ html lang="en"
               | Grace Hopper
       .parallax
         img alt=("Unsplashed background img 2") src="assets/background6.jpg" /
-    .container
+     .container
       .section
         .row
-          .col.s12.center
+          .col.s12.center#about.section.scrollspy
             h3
-              i.mdi-content-send.brown-text
-            h4 Coderary
-            p.center-align.light.z-depth-5 The wisdom of millions talented and motiavetd developers, artists and educators spread out across the Internet that, combined, can bring the brand new world closer.
-    .parallax-container.valign-wrapper
+              i.mdi-content-send.lime-text
+            h4 ABOUT
+            p.center-align.light.z-depth-5
+            |  After having taught for a even as little as a couple of months you might find yourself have had gathered millions of classroom ideas, aids and carricula. But organizing and keeping track of all that material becames a real struggle: endless folders on the computer, scattered paper notes and bookmarks. A lot gets lost on the way or simply forgotten. TeePees is an answer to all those challenges. It enables you to keep track of everything you have created. You can take notes on the go. Design your own teaching helpers. Even set a timer for each part of the class. Try out this amazing set of tools and go enjoy your awesome work, Teacher!
+            |  You deserve it!
+     .parallax-container.valign-wrapper
       .section.no-pad-bot
         .container
           .row.center
@@ -94,15 +114,15 @@ html lang="en"
     footer.page-footer.lime.accent-3
       .container
         .row
-            h4.white-text.center Connect
-            ul.center
-              li
+            h4.black-text.center Connect
+            .col.s12.center
+
                 a.white-text href="https://twitter.com/katmryc"
                   img alt=("my logo") src="assets/tw.png" /
-              li
+
                 a.white-text href="https://www.facebook.com/profile.php?id=100010805376820"
                   img alt=("my logo") src="assets/fb.png" /
-              li
+
                 a.white-text href="https://www.linkedin.com/in/katmrycak"
                    img alt=("my logo") src="assets/linl.png" /
       .footer-copyright
