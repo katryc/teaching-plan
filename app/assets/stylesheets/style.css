@@ -5,6 +5,7 @@
  *
  * Made By MaterializeCSS.com
  */
+ 
 header, main, footer {
     padding-left: 180px;
   }
@@ -42,7 +43,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 400px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
