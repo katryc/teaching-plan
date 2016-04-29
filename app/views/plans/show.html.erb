@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @plan.title %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @plan.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @plan.end_time %>
+</p>
+
+<p>
+  <strong>Warm up:</strong>
+  <%= @plan.warm_up %>
+</p>
+
+<p>
+  <strong>Intro:</strong>
+  <%= @plan.intro %>
+</p>
+
+<p>
+  <strong>Drill:</strong>
+  <%= @plan.drill %>
+</p>
+
+<p>
+  <strong>Practice:</strong>
+  <%= @plan.practice %>
+</p>
+
+<p>
+  <strong>Gamesandactivities:</strong>
+  <%= @plan.gamesandactivities %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @plan.review %>
+</p>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

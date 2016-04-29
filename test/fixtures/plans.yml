@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  start_time: 2016-04-29 16:41:19
+  end_time: 2016-04-29 16:41:19
+  warm_up: MyText
+  intro: MyText
+  drill: MyText
+  practice: MyText
+  gamesandactivities: MyText
+  review: MyText
+
+two:
+  title: MyString
+  start_time: 2016-04-29 16:41:19
+  end_time: 2016-04-29 16:41:19
+  warm_up: MyText
+  intro: MyText
+  drill: MyText
+  practice: MyText
+  gamesandactivities: MyText
+  review: MyText
