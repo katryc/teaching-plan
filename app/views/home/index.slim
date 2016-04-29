@@ -27,7 +27,13 @@ html lang="en"
           li.card
            a href="#about"  ABOUT
           li.card
-           a href="#!"  REGISTER
+
+            - if current_user
+               =link_to "Log out",  destroy_user_session_path , method: :delete
+            - else
+               =link_to "Log in", new_user_session_path
+               =link_to "Register", new_user_registration_path
+
           li.card
            a href="#!"  COMMUNITY
           li.card
@@ -41,7 +47,8 @@ html lang="en"
 
 
 
-
+        p.notice= notice
+        p.alert= alert
 
     main
      #index-banner.parallax-container
