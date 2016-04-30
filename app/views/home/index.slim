@@ -32,10 +32,14 @@ html lang="en"
                =link_to "Log out",  destroy_user_session_path , method: :delete
             - else
                =link_to "Log in", new_user_session_path
+
+
                =link_to "Register", new_user_registration_path
 
           li.card
-           a href="#!"  COMMUNITY
+          .btn-group
+            =link_to "PLANS", plans_path, class:"btn btn-default"
+
           li.card
            a href="#!"  LINKS
           li.card
@@ -44,16 +48,12 @@ html lang="en"
         i.mdi-navigation-menu
 
 
-
-
-
-        p.notice= notice
-        p.alert= alert
-
     main
      #index-banner.parallax-container
       .section.no-pad-bot
         .container#home
+          p.notice= notice
+          p.alert= alert
           br/
           br/
           .row.left style="font-size: 52px;font-style: normal;font-weight: normal;height: auto;line-height: 64px;text-decoration: none;text-transform: uppercase;width: auto;font-family: 'Fredericka the Great', sans-serif; color: white;"
@@ -61,6 +61,7 @@ html lang="en"
             | TEACHING PLANS YOU'LL LOVE
           br/
           br/
+          =react_component('Login', text: 'hello!')
       .parallax
         img alt=("background img 1") src="assets/chalkboard5.jpg" /
      .container

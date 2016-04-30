@@ -1,0 +1,14 @@
+.card
+  |EDIT YOUR PLAN
+.card
+ = render 'form'
+
+
+ul
+  li.card
+  .btn-group
+    = link_to "SHOW", @plan, class:"btn btn-default"
+
+  li.card
+  .btn-group
+    = link_to "BACK", plans_path, class:"btn btn-default"
