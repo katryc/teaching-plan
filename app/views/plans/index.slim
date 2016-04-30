@@ -1,0 +1,47 @@
+p#notice= notice
+.container
+ .row
+  .card
+    h1 Your Plans
+.container
+ .section
+
+  table
+    thead
+      tr
+        th Title
+        th Start time
+        th End time
+        th Warm up
+        th Intro
+        th Drill
+        th Practice
+        th Games and activities
+        th Review
+        th colspan="3"
+    tbody
+      - @plans.each do |plan|
+        tr
+          td= plan.title
+          td= plan.start_time
+          td= plan.end_time
+          td= plan.warm_up
+          td= plan.intro
+          td= plan.drill
+          td= plan.practice
+          td= plan.gamesandactivities
+          td= plan.review
+
+
+        .btn-group
+          =link_to "SHOW", plan, class:"btn btn-default lime accent-3"
+
+        .btn-group
+          = link_to 'Edit', edit_plan_path(plan), class:"btn btn-default"
+
+        .btn-group
+          = link_to 'Destroy', plan, method: :delete, class:"btn btn-default"
+
+br/
+.btn-group.center
+ = link_to 'New Plan', new_plan_path,class:"btn btn-default"

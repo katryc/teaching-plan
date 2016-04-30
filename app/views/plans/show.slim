@@ -1,0 +1,53 @@
+p#notice= notice
+
+.container
+  .section
+   .row
+
+            p
+              strong Title:
+              = @plan.title
+
+
+   .row
+     .col.s12.m3
+            p
+              strong Start time:
+              = @plan.start_time
+     .col.s12.m3
+            p
+              strong End time:
+              = @plan.end_time
+   .row
+            p
+              strong Warm up:
+              = @plan.warm_up
+   .row
+            p
+              strong Intro:
+              = @plan.intro
+   .row
+            p
+              strong Drill:
+              = @plan.drill
+   .row
+            p
+              strong Practice:
+              = @plan.practice
+   .row
+            p
+              strong Gamesandactivities:
+              = @plan.gamesandactivities
+   .row            
+            p
+              strong Review:
+              = @plan.review
+
+.section.center
+ .row
+  .btn-group
+  = link_to 'EDIT', edit_plan_path(@plan),class: "btn btn-default lime"
+
+ .row
+  .btn-group
+  = link_to 'BACK', plans_path, class: "btn btn-default lime"
