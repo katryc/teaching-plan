@@ -1,0 +1,64 @@
+= form_for(@plan) do |f|
+  - if @plan.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@plan.errors.count, "error")
+        | Please, correct these fields:
+      ul
+        - @plan.errors.full_messages.each do |message|
+          li= message
+
+
+
+  .container
+   .row
+    form.col.s3
+     .row
+       .input-field.col.s12
+        = f.text_field :title
+
+   .row.col.s12
+     form.col.s10.m4
+      input.datepicker type="datetime_select"
+       = f.label :start_time
+
+
+     form.col.s10.m4
+      input.datepicker type="datetime_select"
+       = f.label :end_time
+
+
+   .row
+     form.col.s12
+       .row
+         .input-field.col.s12
+           textarea#textarea1.materialize-textarea
+           label for="textarea1"  warm_up
+           = f.text_area :warm_up
+
+   .input-field
+      = f.label :intro
+      br/
+      = f.text_area :intro
+
+   .input-field
+      = f.label :drill
+      br/
+      = f.text_area :drill
+
+   .input-field
+      = f.label :practice
+      br/
+      = f.text_area :practice
+
+   .input-field
+
+      = f.text_area :gamesandactivities
+
+   .input-field
+      = f.label :review
+      br/
+      = f.text_area :review
+
+   .field.center
+      = f.submit
