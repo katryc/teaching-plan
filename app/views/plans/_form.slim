@@ -12,20 +12,24 @@
 
   .container
    .row
-    form.col.s3
-     .row
+     form.col.s3
+      .row
        .input-field.col.s12
+        = f.label :title
         = f.text_field :title
 
    .row.col.s12
-     form.col.s10.m4
+     form.col.m4
+
+      .input-field
+       = f.time_select :start_time
+
+     form.col.m4
       input.datepicker type="datetime_select"
-       = f.label :start_time
+       = f.datetime_select :end_time
 
 
-     form.col.s10.m4
-      input.datepicker type="datetime_select"
-       = f.label :end_time
+
 
 
    .row
@@ -33,32 +37,40 @@
        .row
          .input-field.col.s12
            textarea#textarea1.materialize-textarea
-           label for="textarea1"  warm_up
-           = f.text_area :warm_up
+           .input-field
+             = f.label :WARM_UP
+             = f.text_area :warm_up
 
-   .input-field
+   .row
+    .input-field
       = f.label :intro
       br/
       = f.text_area :intro
 
-   .input-field
+   .row
+    .input-field
       = f.label :drill
       br/
       = f.text_area :drill
 
-   .input-field
+   .row
+    .input-field
       = f.label :practice
       br/
       = f.text_area :practice
 
-   .input-field
-
+   .row
+    .input-fiel
+      = f.label :gamesandactivities
+      br/
       = f.text_area :gamesandactivities
 
-   .input-field
+   .row
+    .input-field
       = f.label :review
       br/
       = f.text_area :review
 
-   .field.center
+
+    .field.center
       = f.submit
