@@ -33,14 +33,14 @@ p#notice= notice
           td= plan.review
 
 
-        .btn-group
-          =link_to "SHOW", plan, class:"btn btn-default lime accent-3"
+          .btn-group
+            =link_to "SHOW", plan, class:"btn btn-default lime accent-3"
 
-        .btn-group
-          = link_to 'Edit', edit_plan_path(plan), class:"btn btn-default"
+          .btn-group
+            = link_to 'Edit', edit_plan_path(plan), class:"btn btn-default"
 
-        .btn-group
-          = link_to 'Destroy', plan, method: :delete, class:"btn btn-default"
+          .btn-group
+            = link_to 'Destroy', plan, method: :delete, class:"btn btn-default"
 
 br/
 .btn-group.center
