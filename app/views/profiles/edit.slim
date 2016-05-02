@@ -1,0 +1,3 @@
+= form_for @profile do |p|
+ -@attributes.each do |attr|
+  = f.text_field attr.to_sym

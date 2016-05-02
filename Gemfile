@@ -39,7 +39,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'sqlite3'
-
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'spring'
 end
 
