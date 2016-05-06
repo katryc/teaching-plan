@@ -15,8 +15,18 @@ end
 end
 
 def show
+  @plan = Plan.find(params[:id])
+  respond_to do |format|
+    format.html
+    format.pdf do
+      pdf = PlanPdf.new(@plan, view_context)
+      send_data pdf.render, filename:
+      "plan_#{@plan.created_at.strftime("%d-%m-%Y")}.pdf",
+      type:"application/pdf"
+    end
+  end
+end
 
-  # GET /plans/new
 def new
   @plan = current_user.plans.build
 end
@@ -32,8 +42,8 @@ end
 end
 
 def edit
-
 end
+
 def update
  if @plan.update(plan_params)
    redirect_to @plan
