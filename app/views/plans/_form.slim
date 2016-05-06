@@ -18,15 +18,27 @@
         = f.label :title
         = f.text_field :title
 
+   .row
+      = f.collection_select :category_id, Category.all, :id, :name, { prompt: "Add a corresponding category"}
+
+   .row
+         .input-field
+           = f.label :category_id
+           br/
+           = f.text_area :gamesandactivities
+
    .row.col.s12
-     form.col.m4
+     form.col.m5
+      = f.label :start_time
 
       .input-field
-       = f.time_select :start_time
+       = f.time_field :start_time
 
-     form.col.m4
-      input.datepicker type="datetime_select"
-       = f.datetime_select :end_time
+     form.col.m5
+      = f.label :end_time
+
+      .input-field
+       = f.time_field :end_time
 
 
 
@@ -60,7 +72,7 @@
       = f.text_area :practice
 
    .row
-    .input-fiel
+    .input-field
       = f.label :gamesandactivities
       br/
       = f.text_area :gamesandactivities

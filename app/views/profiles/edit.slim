@@ -4,7 +4,8 @@
   .row
    .col.s12.m6
     h1 Hello
-    =current_user.email
+
+    =current_user.username
 
 
   .row
@@ -16,3 +17,10 @@
    .col.s12.m6
     .btn-group
     = link_to "Log out",  destroy_user_session_path , method: :delete, class: "btn btn-default lime"
+
+
+  .row
+    .col.md.4
+            ul.list-group
+            - Category.all.each do |category|
+              li= link_to category.name, plans_path(category: category.name), class:"list-group-item"

@@ -5,56 +5,45 @@ class PlansController < ApplicationController
   # GET /plans
   # GET /plans.json
   def index
-    @plans = Plan.all
-  end
 
-  # GET /plans/1
-  # GET /plans/1.json
-  def show
-  end
+  if params[:category].blank?
+    @plans = Plan.all.order("created_at DESC")
+  else
+    @category_id = Category.find_by(name: params[:category]).id
+    @plans = Plan.where(category_id: @category_id).order("created_at DESC")
+end
+end
+
+def show
 
   # GET /plans/new
-  def new
-    @plan = Plan.new
-  end
+def new
+  @plan = current_user.plans.build
+end
 
-  # GET /plans/1/edit
-  def edit
-  end
+def create
+  @plan = current_user.plans.build(plan_params)
+  if @plan.save
+    redirect_to @plan
+  else
+    render 'new'
 
-  # POST /plans
-  # POST /plans.json
-  def create
-    @plan = Plan.new(plan_params)
+end
+end
 
-    respond_to do |format|
-      if @plan.save
-        format.html { redirect_to @plan, notice: 'Plan was successfully created.' }
-        format.json { render :show, status: :created, location: @plan }
-      else
-        format.html { render :new }
-        format.json { render json: @plan.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+def edit
 
-  # PATCH/PUT /plans/1
-  # PATCH/PUT /plans/1.json
-  def update
-    respond_to do |format|
-      if @plan.update(plan_params)
-        format.html { redirect_to @plan, notice: 'Plan was successfully updated.' }
-        format.json { render :show, status: :ok, location: @plan }
-      else
-        format.html { render :edit }
-        format.json { render json: @plan.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+end
+def update
+ if @plan.update(plan_params)
+   redirect_to @plan
 
-  # DELETE /plans/1
-  # DELETE /plans/1.json
-  def destroy
+else
+  render 'edit'
+end
+end
+
+def destroy
     @plan.destroy
     respond_to do |format|
       format.html { redirect_to plans_url, notice: 'Plan was successfully destroyed.' }
@@ -62,6 +51,7 @@ class PlansController < ApplicationController
     end
   end
 
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plan
@@ -70,6 +60,6 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.require(:plan).permit(:title, :start_time, :end_time, :warm_up, :intro, :drill, :practice, :gamesandactivities, :review)
+      params.require(:plan).permit(:title, :start_time, :end_time, :warm_up, :intro, :drill, :practice, :gamesandactivities, :review, :category_id)
     end
 end
