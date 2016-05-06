@@ -7,4 +7,12 @@ class PlansPdf < Prawn::Document
    text "Your Teaching Plan #{@plan.id}"
  end
 
+  def logo
+   logopath = "#{Rails.root}/app/assets/images/brand.png"
+   image logopath, :width => 197, :height => 91
+
+  end
+
+
+
 end
