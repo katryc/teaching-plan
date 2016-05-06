@@ -4,14 +4,14 @@ class PlansController < ApplicationController
 
   # GET /plans
   # GET /plans.json
-  def index
+def index
 
   if params[:category].blank?
     @plans = Plan.all.order("created_at DESC")
   else
     @category_id = Category.find_by(name: params[:category]).id
     @plans = Plan.where(category_id: @category_id).order("created_at DESC")
-end
+ end
 end
 
 def show
@@ -19,7 +19,7 @@ def show
   respond_to do |format|
     format.html
     format.pdf do
-      pdf = PlanPdf.new(@plan, view_context)
+      pdf = PlansPdf.new(@plan, view_context)
       send_data pdf.render, filename:
       "plan_#{@plan.created_at.strftime("%d-%m-%Y")}.pdf",
       type:"application/pdf"
@@ -38,7 +38,7 @@ def create
   else
     render 'new'
 
-end
+ end
 end
 
 def edit
@@ -61,7 +61,6 @@ def destroy
     end
   end
 
-end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plan

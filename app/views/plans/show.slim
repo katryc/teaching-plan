@@ -51,3 +51,7 @@ p#notice= notice
  .row
   .btn-group
   = link_to 'BACK', plans_path, class: "btn btn-default lime"
+
+ .row
+  .btn-group
+   = link_to 'DOWLOAD PDF', plan_path(@plan.id, :format => "pdf"), class: "btn btn-default lime"
