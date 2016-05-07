@@ -29,19 +29,15 @@ end
 
 def body
   move_down 20
-  table plan_rows do
-      row(0).font_style = :bold
-      self.header = false
-      self.row_colors = ['DDDDDD', 'FFFFFF']
-      self.column_widths = [40, 300, 200]
-    end
-  end
-
-  def plan_rows
-    [["WARM UP","INTRO", "DRILL","PRACTICE","GAMES & ACTIVITIES","REVIEW"]] +
-    [@plan.warm_up, @plan.intro, @plan.drill, @plan.practice, @plan.gamesandactivities, @plan.review]
-
+  text "Warm Up: #{@plan.warm_up}"
+  text "Intro: #{@plan.intro}"
+  text "Drill: #{@plan.drill}"
+  text "Practice: #{@plan.practice}"
+  text "Games and Activities: #{@plan.gamesandactivities}"
+  text "Review: #{@plan.review}"
 end
+
+
 
 
 
