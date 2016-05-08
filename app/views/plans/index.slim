@@ -1,47 +1,31 @@
-p#notice= notice
 .container
  .row
-  .card
-    h1 Your Plans
-.container
- .section
+  .card.col.m12
+    .col.s9
+      h3 Your Plans
+    .col.s3.center
+      .button
+       = link_to 'New Plan', new_plan_path,class:"btn btn-default"
+    .row
+     .col.m5.center
+     p#notice= notice
 
-  table.responsive-table.striped.highlight
-    thead
-      tr
-        th Title
-        th Start time
-        th End time
-        th Warm up
-        th Intro
-        th Drill
-        th Practice
-        th Games and activities
-        th Review
-        th colspan="3"
-    tbody
-      - @plans.each do |plan|
-        tr
-          td= plan.title
-          td= plan.start_time
-          td= plan.end_time
-          td= plan.warm_up
-          td= plan.intro
-          td= plan.drill
-          td= plan.practice
-          td= plan.gamesandactivities
-          td= plan.review
+ .row
+  -@plans.each do |plan|
+      .card.col.s12.m5
+        .row
+         .col.s9.blue
+          h5.white-text Title:
+          = link_to plan.title, plan
+         .col.s3.green
+          h5.white-text Added date:
+          = plan.created_at.strftime('%b %d, %Y')
 
+         .col.m5.center.pink
+          = truncate(plan.intro, length: 200)
 
+        .row.center.yellow
           .btn-group
-            =link_to "SHOW", plan, class:"btn btn-default lime accent-3"
-
-          .btn-group
+            = link_to "SHOW", plan, class:"btn btn-default lime accent-3"
             = link_to 'Edit', edit_plan_path(plan), class:"btn btn-default"
-
-          .btn-group
             = link_to 'Destroy', plan, method: :delete, class:"btn btn-default"
-
-br/
-.btn-group.center
- = link_to 'New Plan', new_plan_path,class:"btn btn-default"

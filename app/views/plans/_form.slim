@@ -1,4 +1,4 @@
-= form_for(@plan) do |f|
+= simple_form_for(@plan) do |f|
   - if @plan.errors.any?
     #error_explanation
       h2
@@ -13,76 +13,42 @@
   .container
    .row
      form.col.s3
-      .row
-       .input-field.col.s12
-        = f.label :title
-        = f.text_field :title
-
-   .row
-      = f.collection_select :category_id, Category.all, :id, :name, { prompt: "Add a corresponding category"}
-
-   .row
-         .input-field
-           = f.label :category_id
-           br/
-           = f.text_area :gamesandactivities
+     .input-field.col.s12
+        = f.input :title
 
    .row.col.s12
-     form.col.m5
-      = f.label :start_time
+     .input-field.col.m5
+      = f.input :start_time
 
-      .input-field
-       = f.time_field :start_time
-
-     form.col.m5
-      = f.label :end_time
-
-      .input-field
-       = f.time_field :end_time
-
-
-
-
+     .input-field.col.m5
+      = f.input :end_time
 
    .row
-     form.col.s12
-       .row
-         .input-field.col.s12
-           textarea#textarea1.materialize-textarea
-           .input-field
-             = f.label :WARM_UP
-             = f.text_area :warm_up
+     .input-field
+      = f.input :warm_up
 
    .row
     .input-field
-      = f.label :intro
-      br/
-      = f.text_area :intro
+      = f.input :intro
+
 
    .row
     .input-field
-      = f.label :drill
-      br/
-      = f.text_area :drill
+      = f.input :drill
 
    .row
     .input-field
-      = f.label :practice
-      br/
-      = f.text_area :practice
+      = f.input :practice
+
 
    .row
     .input-field
-      = f.label :gamesandactivities
-      br/
-      = f.text_area :gamesandactivities
+      = f.input :gamesandactivities
+
 
    .row
     .input-field
-      = f.label :review
-      br/
-      = f.text_area :review
+      = f.input :review
 
-
-    .field.center
-      = f.submit
+   .row.center
+      = f.button :submit
