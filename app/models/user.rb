@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   has_many :plans
   has_one :profile
   before_create :build_profile #creates profile at user registration
+  validates :user_name, presence: true, length: { minimum: 4, maximum: 16 }  
 end
