@@ -27,6 +27,15 @@ def show
   end
 end
 
+def search
+	@plans = Plan.search(params[:query]).paginate(page: params[:page], per_page: 3)
+	if request.xhr?
+		render :json => @plans.to_json
+	else
+		render :search
+	end
+end
+
 def new
   @plan = current_user.plans.build
 end
