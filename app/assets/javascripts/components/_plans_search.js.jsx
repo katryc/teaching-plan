@@ -6,7 +6,7 @@ var PlansSearch = React.createClass({
 				<p><input ref="query" name="query" placeholder="Search plans" onChange={ this.props.submitPath } /></p>
 				</form>
 
-				<a href="#" onClick={ this.props.cancelPath }>Cancel</a>
+				<button><a href="#" onClick={ this.props.cancelPath }>Cancel</a></button>
 			</div>
 			);
 	}

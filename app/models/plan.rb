@@ -3,10 +3,10 @@ class Plan < ActiveRecord::Base
   belongs_to :category
   belongs_to :profile
 
-  searchkick text_start: [‘title’], text_start: [‘intro’]
+  # searchkick text_start: [‘title’], text_start: [‘intro’]
 
   def self.search(term)
-     where("title LIKE ? OR intro LIKE ?", "%#{term}%", "%#{term}%" )
+     where("title LIKE ? ", "%#{term}%" )
    end
 
 end
