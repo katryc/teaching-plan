@@ -22,7 +22,7 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+    color: #e040fb;
   }
 
   &:hover {
@@ -43,7 +43,8 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: #f48fb1;
+  border-radius: 2%;
   display: table;
 }
 
