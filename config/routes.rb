@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :plans
+  get '/search' => 'plans#search', as: :search
   resources :profiles, only: [:edit]
   resources :users
   root 'home#index'
