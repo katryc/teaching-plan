@@ -1,16 +1,15 @@
-
 .registration-bg
   .container.section
-      .col.m5
-        h1.center-align Login
+        h1.center-align CREATE ACCOUNT
         .row.center
           .section
             .col.m6.offset-m3
              .card
-
+               .row
+                .col.m8.offset-m2
 
                   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-                    .input-field
+                    .field
                       = f.label :email
                       br/
                       = f.email_field :email, autofocus: true
