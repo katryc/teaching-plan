@@ -1,4 +1,6 @@
 p#notice= notice
+ =render 'application/_navigation'
+
 .container
  .section
   .row
@@ -30,5 +32,6 @@ p#notice= notice
  .section
   .row
    .col.s12.m6
-   - Plan.all.each do |plan|
-     li= link_to plan.title, plans_path(plan: plan.title), class: "list-group-item"
+  /  - Plan.all.each do |plan|
+  /    li= link_to plan.title, plans_path(plan: plan.title), class: "list-group-item"
+    =render 'form'

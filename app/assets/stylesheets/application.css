@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
- @import 'registrations';
+
+
 html {
   font-family: blenderthin, monospace, MuseoSans_Fat;
   font-weight: lighter;
