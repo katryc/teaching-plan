@@ -1,43 +1,63 @@
 .registration-bg
   .container.section
-    .row.card
-      .col.m9
-        .card.log-in
-          .card.card-heading
+        h1.center-align CREATE ACCOUNT
+        .row.center
+          .section
+            .col.m6.offset-m3
+             .card
+               .row
+                .col.m8.offset-m2
+
+                  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+                    = devise_error_messages!
+
+                    .row
+                     .input-field
+                      = f.label :username
+                      = f.text_field :username, autofocus: true
+
+                    .row
+                     .input-field
+                      = f.label :field_of_teaching
+                      br/
+                      = f.text_field :field_of_teaching, autofocus: true
+
+                    .row
+                     .input-field
+                      = f.label :city
+                      br/
+                      = f.text_field :city, autofocus: true
+
+                    .row
+                     .input-field
+                      = f.label :email
+                      br/
+                      = f.email_field :email, autofocus: true
+
+                    .row
+                     .input-field
+                      = f.label :password
+                      - if @minimum_password_length
+                        em
+                          | (#{@minimum_password_length} characters minimum)
+                      br/
+                      = f.password_field :password, autocomplete: "off"
+
+                    .row
+                     .input-field
+                      = f.label :password_confirmation
+                      br/
+                      = f.password_field :password_confirmation, autocomplete: "off"
 
 
-            h1 create your account
-            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-              = devise_error_messages!
+                    .row
+                     .col.m12
+                        .actions
+                          = f.submit "Sign up",class: "btn btn-default lime"
 
-              .panel-body
-              .field
-                = f.label :username
-                br/
-                = f.text_field :username, autofocus: true
-              .field
-                = f.label :field_of_teaching
-                br/
-                = f.text_field :field_of_teaching, autofocus: true
-              .field
-                = f.label :city
-                br/
-                = f.text_field :city, autofocus: true
-              .field
-                = f.label :email
-                br/
-                = f.email_field :email, autofocus: true
-              .field
-                = f.label :password
-                - if @minimum_password_length
-                  em
-                    | (#{@minimum_password_length} characters minimum)
-                br/
-                = f.password_field :password, autocomplete: "off"
-              .field
-                = f.label :password_confirmation
-                br/
-                = f.password_field :password_confirmation, autocomplete: "off"
-              .actions
-                = f.submit "Sign up"
-            = render "devise/shared/links"
+
+
+
+
+
+                    = render "devise/shared/links"
