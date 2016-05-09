@@ -5,7 +5,7 @@ class Plan < ActiveRecord::Base
 
 
   def self.search(term)
-     where("title LIKE ? OR content LIKE ?", "%#{term}%", "%#{term}%" )
+     where("title LIKE ? OR intro LIKE ?", "%#{term}%", "%#{term}%" )
    end
 
 end
