@@ -9,7 +9,12 @@ p#notice= notice
 
     =current_user.username
 
-  = react_component 'PlansContainer', { plansPath: plans_path(:json), searchPath: search_path }
+
+  .row
+   .col.s12.m6
+    .btn-group
+
+    = link_to "Search", search_path, class: "btn btn-default lime"
 
   .row
    .col.s12.m6
