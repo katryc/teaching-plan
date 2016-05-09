@@ -29,3 +29,41 @@
             = link_to "SHOW", plan, class:"btn btn-default lime accent-3"
             = link_to 'Edit', edit_plan_path(plan), class:"btn btn-default"
             = link_to 'Destroy', plan, method: :delete, class:"btn btn-default"
+
+
+            / .card.enhanced style=("background-color: transparent")
+            /        .cyan
+            /          .row.middle-xs
+            /            .col-xs-10
+            /              .box
+            /                .card-title.white-text.truncate.modal-close.action-marker-goto.action-gallery-search data-workpad-key="IEcSbeeHpecFuGDB3SzuAd" style=("padding:0.2rem 1rem 0rem;")
+            /                  = @plan.title
+            /                  span.green-text.text-lighten-4 style=("font-size: 0.8rem; font-weight: 500;")
+            /                p.card-description.truncate.card-keywords.light.action-gallery-search
+            /
+            /        .card-content.grey.lighten-4 style=("margin-bottom: 8px; padding: 5px 10px; font-size: 0.8rem;")
+            /          .row.middle-xs
+            /            .col-xs.start-xs
+            /              .box
+            /                h4 Content
+            /                = truncate(plan.intro, length: 200)
+            /        .card-content.grey.lighten-4 style=("margin-bottom: 8px; padding: 5px 10px; font-size: 0.8rem;")
+            /            .row.middle-xs
+            /               .col-xs.start-xs
+            /                 .box
+            /                   h4 Price
+            /                   = @note.price
+            /        .card-content.teal.lighten-3 style=("padding-top: 0;  padding-bottom: 0; background-color: #fff;")
+            /          .card-details style=("padding: 10px 0px;")
+            /            .row.between-xs style=("width: 100%; margin:0;")
+            /              .col-xs
+            /                .box
+            /                   = link_to "SHOW", plan, class:"btn btn-default lime accent-3"
+            /
+            /              .col-xs.end-xs
+            /                .box
+            /                = link_to 'Edit', edit_plan_path(plan), class:"btn btn-default"
+            /
+            /              .col-xs.end-xs
+            /                .box
+            /                = link_to 'Destroy', plan, method: :delete, class:"btn btn-default"
