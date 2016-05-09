@@ -1,0 +1,34 @@
+nav.top-nav.lime.accent-3
+ .container#home.section.scrollspy
+  .nav-wrapper
+      a#logo-container.brand-logo.hbrand.center href="#"
+
+ .container
+   a#nav-mobile.button-collapse.top-nav.full-hide-on-large-only
+
+ ul#slide-out.side-nav.fixed
+    li.logo style="width: 250px; height: 200px;"
+     a href="#home"
+       img alt=('logo on the sidebar') src="assets/emg_hero.png" style="width: 180px; height: 180px;"/
+    li.card
+     a href="#about"  ABOUT
+    li.card
+
+      - if current_user
+         =link_to "Log out",  destroy_user_session_path , method: :delete
+      - else
+         =link_to "Log in", new_user_session_path
+
+
+         =link_to "Register", new_user_registration_path
+
+    li.card
+    .btn-group
+      =link_to "PLANS", plans_path, class:"btn btn-default"
+
+    li.card
+     a href="#!"  LINKS
+    li.card
+
+ a.button-collapse data-activates="slide-out" href="#"
+  i.mdi-navigation-menu
