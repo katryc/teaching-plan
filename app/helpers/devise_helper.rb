@@ -12,7 +12,7 @@ module DeviseHelper
   html = <<-HTML
   <div class="card pink lighten-3">
   <button class="btn-floating btn-large waves-effect waves-light close" aria-hidden="true">&times;</button>
-  <h5>#{sentence}</h5>
+  <h5 class="white-text">#{sentence}</h5>
   #{messages}</div>
   HTML
   html.html_safe
