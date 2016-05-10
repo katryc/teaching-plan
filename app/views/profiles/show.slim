@@ -26,6 +26,12 @@ p#notice= notice
     .btn-group
     = link_to "Log out",  destroy_user_session_path , method: :delete, class: "btn btn-default lime"
 
+  .row
+   .col.s12.m6
+    .btn-group
+    - if @user == current_user
+    = link_to 'Edit Profile', edit_profile_path(@user.id)
+
 
   .row
     .col.md.4
