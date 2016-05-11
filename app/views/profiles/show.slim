@@ -13,7 +13,7 @@ p#notice= notice
     .col-md-12
       .img-circle
 
-       =image_tag current_user.avatar
+
 
   .row
    .col.s12.m6
@@ -38,16 +38,16 @@ p#notice= notice
     = link_to 'Edit Profile', edit_profile_path(current_user.id)
 
 
-  .row
-    .col.md.4
-            ul.list-group
-            - Category.all.each do |category|
-              li= link_to category.name, plans_path(category: category.name), class:"list-group-item"
-
-.container
- .section
-  .row
-   .col.s12.m6
-  /  - Plan.all.each do |plan|
-  /    li= link_to plan.title, plans_path(plan: plan.title), class: "list-group-item"
-    =render 'form'
+/   .row
+/     .col.md.4
+/             ul.list-group
+/             - Category.all.each do |category|
+/               li= link_to category.name, plans_path(category: category.name), class:"list-group-item"
+/
+/ .container
+/  .section
+/   .row
+/    .col.s12.m6
+/   /  - Plan.all.each do |plan|
+/   /    li= link_to plan.title, plans_path(plan: plan.title), class: "list-group-item"
+/     =render 'form'

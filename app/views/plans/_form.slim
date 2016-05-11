@@ -1,4 +1,5 @@
-= simple_form_for(@plan) do |f|
+.form
+= form_for(@plan) do |f|
   - if @plan.errors.any?
     #error_explanation
       h2
@@ -13,42 +14,49 @@
   .container
    .row
      form.col.s3
-     .input-field.col.s12
-        = f.input :title
+     .field.col.s12
+        = f.text_field :title
 
-   .row.col.s12
-     .input-field.col.m5
-      = f.input :start_time
+   .row
+     form.col.s3
+      .field.col.s6
+       = f.label :start_time
+       br/
+       = f.text_field :start_time
 
-     .input-field.col.m5
-      = f.input :end_time
+      .field.col.s6
+
+       = f.label :end_time
+       br/
+
+       = f.text_area :end_time
 
    .row
      .input-field
-      = f.input :warm_up
+      = f.text_area :warm_up
 
    .row
     .input-field
-      = f.input :intro
-
-
-   .row
-    .input-field
-      = f.input :drill
-
-   .row
-    .input-field
-      = f.input :practice
+      = f.text_area :intro
 
 
    .row
     .input-field
-      = f.input :gamesandactivities
+      = f.text_area :drill
+
+   .row
+    .input-field
+      = f.text_area :practice
 
 
    .row
     .input-field
-      = f.input :review
+      = f.text_area :gamesandactivities
+
+
+   .row
+    .input-field
+      = f.text_area :review
 
    .row.center
       = f.button :submit

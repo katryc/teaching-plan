@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/search' => 'plans#search', as: :search
   resources :profiles
   resources :users
+  get ':id' => 'users#show', as: :user_profile
+  get ':id/setting' => 'users#edit', as: :user_setting
+  match ':id/setting' => 'users#update', via: [:put, :patch]
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
