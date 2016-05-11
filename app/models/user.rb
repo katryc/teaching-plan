@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  has_attached_file :avatar, styles: { medium: '152x152#' }
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/         
   has_many :plans, dependent: :destroy
   has_one :profile, dependent: :destroy
   before_create :build_profile #creates profile at user registration

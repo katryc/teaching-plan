@@ -9,6 +9,11 @@ p#notice= notice
 
     =current_user.username
 
+  .row
+    .col-md-12
+      .img-circle
+
+       =image_tag current_user.avatar
 
   .row
    .col.s12.m6
@@ -30,7 +35,7 @@ p#notice= notice
    .col.s12.m6
     .btn-group
     - if @user == current_user
-    = link_to 'Edit Profile', edit_profile_path(@user.id)
+    = link_to 'Edit Profile', edit_profile_path(current_user.id)
 
 
   .row
